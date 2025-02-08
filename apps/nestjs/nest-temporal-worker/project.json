@@ -1,9 +1,8 @@
 {
-  "name": "nestjs-app",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/nestjs-app/src",
+  "name": "nest-temporal-worker",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nestjs/nest-temporal-worker/src",
   "projectType": "application",
-  "tags": [],
   "targets": {
     "build": {
       "executor": "nx:run-commands",
@@ -28,22 +27,18 @@
         "build"
       ],
       "options": {
-        "buildTarget": "nestjs-app:build",
+        "buildTarget": "nest-temporal-worker:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "nestjs-app:build:development"
+          "buildTarget": "nest-temporal-worker:build:development"
         },
         "production": {
-          "buildTarget": "nestjs-app:build:production"
+          "buildTarget": "nest-temporal-worker:build:production"
         }
       }
-    },
-    "test": {
-      "options": {
-        "passWithNoTests": true
-      }
     }
-  }
+  },
+  "tags": []
 }

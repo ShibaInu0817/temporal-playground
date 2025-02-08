@@ -1,9 +1,8 @@
 {
-  "name": "nodejs-app",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "nodejs-app/src",
+  "name": "node-temporal-worker",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/express/node-temporal-worker/src",
   "projectType": "application",
-  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
@@ -11,12 +10,12 @@
       "defaultConfiguration": "production",
       "options": {
         "platform": "node",
-        "outputPath": "dist/nodejs-app",
+        "outputPath": "dist/apps/express/node-temporal-worker",
         "format": ["cjs"],
         "bundle": false,
-        "main": "nodejs-app/src/main.ts",
-        "tsConfig": "nodejs-app/tsconfig.app.json",
-        "assets": ["nodejs-app/src/assets"],
+        "main": "apps/express/node-temporal-worker/src/main.ts",
+        "tsConfig": "apps/express/node-temporal-worker/tsconfig.app.json",
+        "assets": ["apps/express/node-temporal-worker/src/assets"],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
@@ -42,22 +41,18 @@
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
       "options": {
-        "buildTarget": "nodejs-app:build",
+        "buildTarget": "node-temporal-worker:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "nodejs-app:build:development"
+          "buildTarget": "node-temporal-worker:build:development"
         },
         "production": {
-          "buildTarget": "nodejs-app:build:production"
+          "buildTarget": "node-temporal-worker:build:production"
         }
       }
-    },
-    "test": {
-      "options": {
-        "passWithNoTests": true
-      }
     }
-  }
+  },
+  "tags": []
 }
